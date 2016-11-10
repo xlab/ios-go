@@ -10,6 +10,7 @@
 		254BB84F1B1FD08900C56DE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254BB84E1B1FD08900C56DE9 /* Images.xcassets */; };
 		254BB8681B1FD16500C56DE9 /* main in Resources */ = {isa = PBXBuildFile; fileRef = 254BB8671B1FD16500C56DE9 /* main */; };
 		25FB30331B30FDEE0005924C /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 25FB30321B30FDEE0005924C /* assets */; };
+		F67AD8751DD5392F002CF957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67AD8741DD5392F002CF957 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		254BB84E1B1FD08900C56DE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		254BB8671B1FD16500C56DE9 /* main */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = main; sourceTree = "<group>"; };
 		25FB30321B30FDEE0005924C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = main/assets; sourceTree = "<group>"; };
+		F67AD8741DD5392F002CF957 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				254BB8671B1FD16500C56DE9 /* main */,
+				F67AD8741DD5392F002CF957 /* Main.storyboard */,
 				254BB84E1B1FD08900C56DE9 /* Images.xcassets */,
 				254BB8411B1FD08900C56DE9 /* Supporting Files */,
 			);
@@ -116,6 +119,7 @@
 				25FB30331B30FDEE0005924C /* assets in Resources */,
 				254BB8681B1FD16500C56DE9 /* main in Resources */,
 				254BB84F1B1FD08900C56DE9 /* Images.xcassets in Resources */,
+				F67AD8751DD5392F002CF957 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

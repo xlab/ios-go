@@ -27,9 +27,9 @@ func main() {
 					log.Println(event.Kind, "event ignored")
 				}
 			case cfg := <-configEvents:
-				log.Printf("rotated device: %v\n", cfg)
+				log.Printf("rotated device: %+v\n", cfg)
 			case tc := <-touchEvents:
-				log.Printf("touch[%d]: (%d,%d) -> %s\n", tc.Sequence, tc.X, tc.Y, tc.State)
+				log.Printf("touch[%d]: (%.1f,%.1f) -> %s\n", tc.Sequence, tc.X, tc.Y, tc.State)
 			case <-a.VSync():
 				// no-op
 			}

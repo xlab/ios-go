@@ -21,12 +21,6 @@
 
 	self.view.contentScaleFactor = UIScreen.mainScreen.nativeScale;
 
-	// int scale = 1;
-	// if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)]) {
-	// 	scale = (int)[UIScreen mainScreen].scale; // either 1.0, 2.0, or 3.0.
-	// }
-	// setScreen(scale);
-
 	CGSize size = [UIScreen mainScreen].nativeBounds.size;
 	CGFloat scale = [UIScreen mainScreen].nativeScale;
 	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
@@ -49,6 +43,7 @@
 		// animate something here
 	} completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
 		UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+		CGSize size = [UIScreen mainScreen].nativeBounds.size;
 		CGFloat scale = [UIScreen mainScreen].nativeScale;
 		onConfigurationChanged((int)size.width, (int)size.height, scale, orientation);
 	}];
