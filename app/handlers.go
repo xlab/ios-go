@@ -13,14 +13,37 @@ type LifecycleEvent struct {
 
 type LifecycleEventKind string
 
+// See also https://developer.apple.com/reference/uikit/uiapplicationdelegate
 const (
 	ViewDidLoad LifecycleEventKind = "viewDidLoad"
 
-	ApplicationWillResignActive    LifecycleEventKind = "applicationWillResignActive"
-	ApplicationDidEnterBackground  LifecycleEventKind = "applicationDidEnterBackground"
-	ApplicationWillEnterForeground LifecycleEventKind = "applicationWillEnterForeground"
-	ApplicationDidBecomeActive     LifecycleEventKind = "applicationDidBecomeActive"
-	ApplicationWillTerminate       LifecycleEventKind = "applicationWillTerminate"
+	// WillResignActive is sent when the application is about to move
+	// from active to inactive state. This can occur for certain types of
+	// temporary interruptions (such as an incoming phone call or SMS message)
+	// or when the user quits the application and it begins the transition to
+	// the background state. Use this method to pause ongoing tasks, disable
+	// timers, and throttle down OpenGL ES frame rates. Games should use this
+	// method to pause the game.
+	WillResignActive LifecycleEventKind = "applicationWillResignActive"
+	// DidEnterBackground signals that you should release shared
+	// resources, save user data, invalidate timers, and store enough
+	// application state information to restore your application to its current
+	// state in case it is terminated later. If your application supports
+	// background execution, this method is called instead of
+	// WillTerminate: when the user quits.
+	DidEnterBackground LifecycleEventKind = "applicationDidEnterBackground"
+	// WillEnterForeground is sent as part of the transition from the
+	// background to the inactive state; here you can undo many of the changes
+	// made on entering the background.
+	WillEnterForeground LifecycleEventKind = "applicationWillEnterForeground"
+	// DidBecomeActive should restart any tasks that were paused (or
+	// not yet started) while the application was inactive. If the application
+	// was previously in the background, optionally refresh the user interface.
+	DidBecomeActive LifecycleEventKind = "applicationDidBecomeActive"
+	// WillTerminate is sent when the application is about to
+	// terminate. Save data if appropriate. See also
+	// DidEnterBackground.
+	WillTerminate LifecycleEventKind = "applicationWillTerminate"
 )
 
 //export onVSync
@@ -49,7 +72,7 @@ func onApplicationWillResignActive() {
 	defaultApp.initWG.Wait()
 
 	event := LifecycleEvent{
-		Kind: ApplicationWillResignActive,
+		Kind: WillResignActive,
 	}
 	defaultApp.lifecycleEvents <- event
 }
@@ -59,7 +82,7 @@ func onApplicationDidEnterBackground() {
 	defaultApp.initWG.Wait()
 
 	event := LifecycleEvent{
-		Kind: ApplicationDidEnterBackground,
+		Kind: DidEnterBackground,
 	}
 	defaultApp.lifecycleEvents <- event
 }
@@ -69,7 +92,7 @@ func onApplicationWillEnterForeground() {
 	defaultApp.initWG.Wait()
 
 	event := LifecycleEvent{
-		Kind: ApplicationWillEnterForeground,
+		Kind: WillEnterForeground,
 	}
 	defaultApp.lifecycleEvents <- event
 }
@@ -79,7 +102,7 @@ func onApplicationDidBecomeActive() {
 	defaultApp.initWG.Wait()
 
 	event := LifecycleEvent{
-		Kind: ApplicationDidBecomeActive,
+		Kind: DidBecomeActive,
 	}
 	defaultApp.lifecycleEvents <- event
 }
@@ -89,7 +112,7 @@ func onApplicationWillTerminate() {
 	defaultApp.initWG.Wait()
 
 	event := LifecycleEvent{
-		Kind: ApplicationWillTerminate,
+		Kind: WillTerminate,
 	}
 	defaultApp.lifecycleEvents <- event
 }
