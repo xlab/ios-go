@@ -1,4 +1,4 @@
-iOS-go
+iOS-go [![Go Report Card](https://goreportcard.com/badge/github.com/xlab/ios-go)](https://goreportcard.com/report/github.com/xlab/ios-go)
 ------
 
 <img src="https://cl.ly/0N2n471J0h0Q/Screen%20Shot%202016-11-11%20at%2002.44.25.png" width="800" /> 

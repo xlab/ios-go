@@ -1,9 +1,6 @@
 #import "GoAppViewController.h"
 #include "_cgo_export.h"
 
-// #include <MoltenVK/vk_mvk_datatypes.h>
-// #include "../Demos.h"
-
 #pragma mark -
 #pragma mark GoAppController
 
@@ -39,9 +36,9 @@
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+	[coordinator animateAlongsideTransition: ^ (id<UIViewControllerTransitionCoordinatorContext> context) {
 		// animate something here
-	} completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+	} completion: ^ (id<UIViewControllerTransitionCoordinatorContext> context) {
 		UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
 		CGSize size = [UIScreen mainScreen].nativeBounds.size;
 		CGFloat scale = [UIScreen mainScreen].nativeScale;
@@ -51,9 +48,9 @@
 
 static void withTouches(int state, NSSet* touches) {
 	CGFloat scale = [UIScreen mainScreen].scale;
-	for (UITouch* touch in touches) {
+	for (UITouch * touch in touches) {
 		CGPoint p = [touch locationInView:touch.view];
-		onTouchEvent((GoUintptr)touch, state, p.x*scale, p.y*scale);
+		onTouchEvent((GoUintptr)touch, state, p.x * scale, p.y * scale);
 	}
 }
 
@@ -70,7 +67,7 @@ static void withTouches(int state, NSSet* touches) {
 }
 
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
-    withTouches(3, touches);
+	withTouches(3, touches);
 }
 
 @end

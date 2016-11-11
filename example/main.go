@@ -1,5 +1,3 @@
-// +build ios
-
 package main
 
 import (

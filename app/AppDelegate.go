@@ -1,6 +1,3 @@
-// +build darwin
-// +build arm arm64
-
 package app
 
 import (
